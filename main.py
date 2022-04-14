@@ -15,8 +15,6 @@ def build_parser():
                         help='需要保存的路径')
     return parser
 
-
-
 class Crawl:
     def __init__(self, url, save):
         self.url = url
@@ -57,7 +55,7 @@ class Crawl:
             for data in response.iter_content(chunk_size=1024):
                 f.write(data)
                 pbar.update(len(data))
-        
+                
 
 if __name__ == '__main__':
     args = build_parser()
